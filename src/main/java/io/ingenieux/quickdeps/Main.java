@@ -62,7 +62,7 @@ public class Main {
 
         result.append(xmlOutputter.outputString(doc));
 
-        return result.toString();
+        return result.toString().trim();
     }
 
 
