@@ -6,9 +6,16 @@ If it finds, it returns the suitable ```<dependency/>``` tag, thus making it eas
 
 ## how to use it?
 
-simply download ```bin/quickdeps``` on this repo, or:
+simply download ```bin/quickdeps``` on this repo:
 
 ```
+$ curl -sSL https://raw.githubusercontent.com/ingenieux/quickdeps/bin/quickdeps > ~/bin/quickdeps
+```
+
+or:
+
+```
+$ git clone https://github.com/ingenieux/quickdeps.git && cd quickdeps
 $ mvn -Pexec-jar package
 ```
 
