@@ -17,12 +17,12 @@ import static org.apache.commons.lang3.StringUtils.defaultString;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 public class Main {
-    public static int main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         // TODO: Use Docopt
         if (0 == args.length) {
             System.err.println("Usage: quickdeps <path to jar files>");
 
-            return 2;
+            System.exit(1);
         }
 
         try {
@@ -31,12 +31,10 @@ public class Main {
             Set<Artifact> artifactSet = fileList.stream().flatMap(Main::fileToArtifacts).collect(Collectors.toSet());
 
             artifactSet.stream().map(Main::toXml).forEach(System.out::println);
-
-            return 0;
         } catch (Exception exc) {
             exc.printStackTrace(System.err);
 
-            return 1;
+            System.exit(2);
         }
     }
 
